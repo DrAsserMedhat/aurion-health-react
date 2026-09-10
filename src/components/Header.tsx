@@ -28,12 +28,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
     >
       <div className="max-w-7xl mx-auto h-full px-6 sm:px-8 flex items-center justify-between">
         
-        {/* Large Logo */}
+        {/* Logo (Decreased by 10%) */}
         <a href="#" className="flex items-center group">
           <img 
             src="/Aurion-Logo.svg" 
             alt="Aurion Health Advisory" 
-            className="h-16 sm:h-[72px] md:h-[76px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+            className="h-[58px] sm:h-[65px] md:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
             onError={(e) => {
               const target = e.currentTarget;
               if (target.src !== 'https://drassermedhat.github.io/AurionHealth/Aurion-Logo.png') {
