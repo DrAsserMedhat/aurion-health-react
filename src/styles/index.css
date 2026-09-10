@@ -63,3 +63,14 @@
   font-style: italic;
   font-weight: 500;
 }
+
+.font-hero-keyword {
+  font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+  font-style: italic;
+  font-weight: 800 !important;
+  color: #4FB2C4 !important;
+  text-shadow: 0 0 35px rgba(79, 178, 196, 0.45);
+  display: inline-block;
+  letter-spacing: normal;
+}
+
