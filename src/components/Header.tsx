@@ -31,12 +31,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
         {/* Large Logo */}
         <a href="#" className="flex items-center group">
           <img 
-            src="/Aurion-Logo.png" 
+            src="/Aurion-Logo.svg" 
             alt="Aurion Health Advisory" 
             className="h-16 sm:h-[72px] md:h-[76px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
             onError={(e) => {
               const target = e.currentTarget;
-              target.src = 'https://drassermedhat.github.io/AurionHealth/Aurion-Logo.png';
+              if (target.src !== 'https://drassermedhat.github.io/AurionHealth/Aurion-Logo.png') {
+                target.src = '/Aurion-Logo.png';
+              }
             }}
           />
         </a>

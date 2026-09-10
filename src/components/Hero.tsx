@@ -7,7 +7,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-screen h-screen flex items-center overflow-hidden bg-black">
-      {/* Full-bleed Edge-to-Edge Video (No Graphs, Clear and Pure) */}
+      {/* Full-bleed Edge-to-Edge Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video 
           autoPlay 
@@ -20,31 +20,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           <source src="/aurion-hero-video.mp4" type="video/mp4" />
           <source src="https://drassermedhat.github.io/AurionHealth/aurion-hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Subtle Bottom & Side Vignette to ensure text readability without obscuring video */}
+        {/* Subtle Bottom & Side Vignette: No graphs, pure and cinematic */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 pt-20 w-full">
         <div className="max-w-3xl">
           
-          {/* Badge: Zero Em-dashes */}
-          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md mb-6 shadow-lg">
+          {/* Badge: Healthcare Ecosystem Advisory (Egypt & GCC removed as requested) */}
+          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md mb-5 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-aurionTeal-vibrant animate-pulse"></span>
             <span className="text-[10px] font-mono tracking-widest-luxury uppercase text-white font-bold">
-              Healthcare Ecosystem Advisory · Egypt & the GCC
+              Healthcare Ecosystem Advisory
             </span>
           </div>
 
-          {/* 3-Line High-Fashion Editorial Typography: "The bridge between strategy and measurable impact." */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white tracking-tight leading-[1.12] mb-6 drop-shadow-md">
+          {/* Sized down ~20% with thinner, elegant typography and transparent gradient styling */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-serif font-light text-white tracking-tight leading-[1.18] mb-5 drop-shadow-md">
             The bridge between <br />
-            <span className="font-fancy-italic text-aurionTeal-glow font-normal">strategy</span> <br />
-            <span className="font-sans font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-              and measurable impact.
+            <span className="font-fancy-italic text-aurionTeal-glow font-light">strategy</span> <br />
+            <span className="font-serif font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+              and measurable <span className="font-extralight italic text-white/95">impact.</span>
             </span>
           </h1>
 
-          {/* Subtitle: Zero Em-dashes */}
+          {/* Subtitle: 0 em-dashes */}
           <p className="text-xs sm:text-sm md:text-base text-slate-200 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow">
             Aurion is a founder-led advisory practice that turns healthcare strategy into clear operating models, international patient pathways, and measurable execution, delivered personally, not handed off.
           </p>
