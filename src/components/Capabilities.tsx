@@ -33,10 +33,10 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
         </div>
 
         {/* 8 Curated High-End Visual Cards with Exact Photography */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           
           {/* 1. International Patient Services */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group border-aurionTeal/40">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group border-aurionTeal/40">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-international-patients.jpg" 
@@ -89,7 +89,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 2. Strategy & Transformation */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-strategy-boardroom.webp" 
@@ -141,7 +141,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 3. Operations & Turnaround */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-operations-clinical.jpg" 
@@ -193,7 +193,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 4. Elite Aesthetics & Wellness */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-wellness-spaces.jpg" 
@@ -245,7 +245,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 5. Mega Events Management (Split Visual: Stage + Audience) */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative flex">
               {/* Left: Stage */}
               <div className="w-1/2 h-full overflow-hidden relative">
@@ -312,7 +312,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 6. Digital Health Informatics */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-digital-health.jpg" 
@@ -364,7 +364,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 7. Business Development, Brand & Commercial Advisory */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card md:col-start-auto lg:col-start-2 lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-commercial-advisory.jpg" 
@@ -416,7 +416,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
           </div>
 
           {/* 8. Healthcare Project Management & Corporate Training */}
-          <div className="executive-card rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
+          <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group">
             <div className="h-64 overflow-hidden relative">
               <img 
                 src="/capability-pmo-training.jpg" 

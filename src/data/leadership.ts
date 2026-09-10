@@ -26,7 +26,7 @@ export const LEADERSHIP: Leader[] = [
     image: "/dr-asser-medhat.png",
     fallbackImage: "https://drassermedhat.github.io/AurionHealth/dr-asser-medhat.png",
     snapshot: [
-      "Dr. Asser Medhat is a physician executive and healthcare transformation advisor with 14+ years of combined clinical, operational, and strategic experience across Egypt, the GCC, Africa, and international healthcare networks.",
+      "Dr. Asser Medhat is a physician executive and healthcare transformation advisor with 16+ years of combined clinical, operational, and strategic experience across Egypt, the GCC, Africa, and international healthcare networks.",
       "He leads Aurion’s strategy, healthcare transformation, operational excellence, and international patient-services initiatives, bringing together clinical credibility, strategic management, and execution discipline."
     ],
     expertise: [
@@ -36,7 +36,7 @@ export const LEADERSHIP: Leader[] = [
     ],
     fullBio: [
       {
-        content: "Dr. Asser Medhat is a physician executive and healthcare transformation leader with more than 14 years of combined clinical, operational, and strategic experience across Egypt, the GCC, Africa, and international healthcare networks. He combines strong clinical grounding in obstetrics and gynecology with an MBA in Strategic Management and a career shaped by healthcare operations leadership, digital health implementation, international patient services, medical education, and cross-border partnerships. His work is distinguished by a consistent focus on operational excellence, measurable performance improvement, patient access, and scalable healthcare growth."
+        content: "Dr. Asser Medhat is a physician executive and healthcare transformation leader with more than 16 years of combined clinical, operational, and strategic experience across Egypt, the GCC, Africa, and international healthcare networks. He combines strong clinical grounding in obstetrics and gynecology with an MBA in Strategic Management and a career shaped by healthcare operations leadership, digital health implementation, international patient services, medical education, and cross-border partnerships. His work is distinguished by a consistent focus on operational excellence, measurable performance improvement, patient access, and scalable healthcare growth."
       },
       {
         title: "CLINICAL LEADERSHIP WITH MANAGERIAL DEPTH",
