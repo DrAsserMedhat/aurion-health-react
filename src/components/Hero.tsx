@@ -15,19 +15,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           muted 
           playsInline 
           poster="https://drassermedhat.github.io/AurionHealth/capability-strategy-boardroom.webp" 
-          className="w-full h-full object-cover opacity-100 filter brightness-95 contrast-105"
+          className="w-full h-full object-cover opacity-70 filter brightness-90 contrast-105"
         >
           <source src="/aurion-hero-video.mp4" type="video/mp4" />
           <source src="https://drassermedhat.github.io/AurionHealth/aurion-hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Subtle Bottom & Side Vignette: No graphs, pure and cinematic */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 pointer-events-none"></div>
+        {/* Subtle Bottom & Side Vignette: High transparency and strong text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/35 pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 pt-20 w-full">
         <div className="max-w-3xl">
           
-          {/* Badge: Healthcare Ecosystem Advisory (Egypt & GCC removed as requested) */}
+          {/* Badge: Healthcare Ecosystem Advisory */}
           <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md mb-5 shadow-lg">
             <span className="w-2 h-2 rounded-full bg-aurionTeal-vibrant animate-pulse"></span>
             <span className="text-[10px] font-mono tracking-widest-luxury uppercase text-white font-bold">
@@ -35,12 +35,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </span>
           </div>
 
-          {/* Sized down ~20% with thinner, elegant typography and transparent gradient styling */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-serif font-light text-white tracking-tight leading-[1.18] mb-5 drop-shadow-md">
-            The bridge between <br />
-            <span className="font-fancy-italic text-aurionTeal-glow font-light">strategy</span> <br />
-            <span className="font-serif font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-              and measurable <span className="font-extralight italic text-white/95">impact</span>
+          {/* Executive luxury typography: both strategy and impact in bold teal */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-cormorant text-white tracking-tight leading-[1.18] mb-5 drop-shadow-lg">
+            <span className="font-light">The bridge between</span> <br />
+            <span className="font-fancy-italic font-bold text-aurionTeal-glow drop-shadow-[0_0_30px_rgba(79,178,196,0.45)]">
+              strategy
+            </span> <br />
+            <span className="font-light">
+              and measurable{' '}
+              <span className="font-fancy-italic font-bold text-aurionTeal-glow drop-shadow-[0_0_30px_rgba(79,178,196,0.45)]">
+                impact
+              </span>
             </span>
           </h1>
 
