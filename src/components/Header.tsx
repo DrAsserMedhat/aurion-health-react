@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X, PlaneTakeoff, TrendingUp, Activity, Gem, Award, ArrowRight } from 'lucide-react';
 
 interface HeaderProps {
@@ -7,10 +7,25 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 h-20 transition-all duration-300 border-b border-white/10 bg-black/95 backdrop-blur-xl">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-40 h-20 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/85 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto h-full px-6 sm:px-8 flex items-center justify-between">
         
         {/* Large Logo */}
@@ -18,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
           <img 
             src="/Aurion-Logo.png" 
             alt="Aurion Health Advisory" 
-            className="h-16 sm:h-[72px] md:h-[76px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-16 sm:h-[72px] md:h-[76px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
             onError={(e) => {
               const target = e.currentTarget;
               target.src = 'https://drassermedhat.github.io/AurionHealth/Aurion-Logo.png';
@@ -127,13 +142,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
           <a href="#leadership" className="hover:text-aurionTeal-vibrant transition-colors">Leadership</a>
         </div>
 
-        {/* Header CTA Button */}
+        {/* Header CTA Button: Schedule a Consultation */}
         <div className="hidden sm:flex items-center space-x-4">
           <button
             onClick={onOpenContact}
             className="px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider text-noir bg-gradient-to-r from-aurionTeal-vibrant to-aurionTeal-glow hover:brightness-110 shadow-glow-teal transition-all"
           >
-            START A CONVERSATION
+            Schedule a Consultation
           </button>
         </div>
 
@@ -150,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-black border-b border-white/10 px-6 py-6 space-y-4 shadow-xl">
+        <div className="lg:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4 shadow-xl">
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-xs uppercase tracking-widest text-white font-semibold hover:text-aurionTeal-vibrant">About</a>
           <a href="#capabilities" onClick={() => setMobileMenuOpen(false)} className="block text-xs uppercase tracking-widest text-white font-semibold hover:text-aurionTeal-vibrant">Capabilities</a>
           <a href="#approach" onClick={() => setMobileMenuOpen(false)} className="block text-xs uppercase tracking-widest text-white font-semibold hover:text-aurionTeal-vibrant">Approach</a>
@@ -161,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer, onOpenContact }) =
             onClick={() => { setMobileMenuOpen(false); onOpenContact(); }}
             className="w-full text-center py-3 rounded-full text-xs font-mono font-bold uppercase text-noir bg-aurionTeal-vibrant mt-4"
           >
-            START A CONVERSATION
+            Schedule a Consultation
           </button>
         </div>
       )}

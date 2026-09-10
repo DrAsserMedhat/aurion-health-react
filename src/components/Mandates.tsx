@@ -14,7 +14,7 @@ export const Mandates: React.FC = () => {
             How We'd Approach a Mandate
           </h2>
           <p className="text-inkMuted text-sm sm:text-base leading-relaxed pt-1">
-            Illustrative scenarios only — not completed engagements — showing how our senior-only advisory approach would translate strategic ambition into institutional performance.
+            Illustrative scenarios only , not completed engagements, showing how our senior-only advisory approach would translate strategic ambition into institutional performance.
           </p>
         </div>
 
