@@ -35,16 +35,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </span>
           </div>
 
-          {/* Executive luxury typography: both strategy and impact in bold teal */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-cormorant text-white tracking-tight leading-[1.18] mb-5 drop-shadow-lg">
+          {/* Executive luxury typography: 10% bigger with “Strategy” and “Impact” in bold teal between quotes */}
+          <h1 className="text-[34px] sm:text-[44px] md:text-[54px] lg:text-[60px] font-cormorant text-white tracking-tight leading-[1.15] mb-5 drop-shadow-lg">
             <span className="font-light">The bridge between</span> <br />
             <span className="font-fancy-italic font-bold text-aurionTeal-glow drop-shadow-[0_0_30px_rgba(79,178,196,0.45)]">
-              strategy
+              “Strategy”
             </span> <br />
             <span className="font-light">
               and measurable{' '}
               <span className="font-fancy-italic font-bold text-aurionTeal-glow drop-shadow-[0_0_30px_rgba(79,178,196,0.45)]">
-                impact
+                “Impact”
               </span>
             </span>
           </h1>
