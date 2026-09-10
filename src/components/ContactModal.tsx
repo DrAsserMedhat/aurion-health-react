@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
-import { X, Send, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { PRACTICES } from '../data/practices';
+import { useState } from 'react';
+import { Send, Check } from 'lucide-react';
 
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+export const ContactModal: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    title: '',
-    organization: '',
-    jurisdiction: 'Egypt',
-    practice: PRACTICES[0].title,
-    email: '',
-    message: ''
-  });
-
-  if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,170 +10,81 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
-      {/* Backdrop */}
-      <div 
-        onClick={onClose}
-        className="fixed inset-0 bg-noir/70 backdrop-blur-sm transition-opacity"
-      />
-
-      {/* Dialog Window */}
-      <div className="relative bg-canvasPure rounded-2xl border border-canvasBorder shadow-2xl max-w-xl w-full p-6 sm:p-8 z-10">
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-lg text-inkMuted hover:text-ink hover:bg-canvas border border-transparent hover:border-canvasBorder transition-all"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        {submitted ? (
-          <div className="py-12 text-center space-y-4">
-            <div className="w-12 h-12 rounded-full bg-aurionTeal-subtle border border-aurionTeal/30 text-aurionTeal flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-serif text-ink font-bold">
-              Advisory Mandate Received
-            </h3>
-            <p className="text-xs sm:text-sm text-inkMuted max-w-md mx-auto leading-relaxed">
-              Your inquiry has been submitted directly to Aurion's Managing Partners. We maintain strict non-disclosure protocols and will respond within 24 hours.
-            </p>
-            <button
-              onClick={() => { setSubmitted(false); onClose(); }}
-              className="mt-4 px-6 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider text-white bg-aurionTeal"
-            >
-              Return to Site
-            </button>
+    <section id="contact" className="py-24 bg-canvas border-b border-canvasBorder relative bg-drafting-grid">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8">
+        
+        <div className="max-w-3xl mb-14 space-y-3 text-center mx-auto">
+          <div className="inline-flex items-center space-x-2 text-[10px] font-mono uppercase tracking-widest text-aurionTeal font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-aurionTeal"></span>
+            <span>Confidential Advisory</span>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="space-y-1.5">
-              <div className="inline-flex items-center space-x-1.5 text-xs font-mono text-aurionTeal uppercase font-semibold">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Confidential Advisory Inquiry</span>
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-ink tracking-tight">
+            Schedule an Executive Consultation
+          </h2>
+          <p className="text-inkMuted text-sm sm:text-base leading-relaxed pt-1">
+            Direct correspondence with managing partners Dr. Asser Medhat and Dr. Asmaa Salman.
+          </p>
+        </div>
+
+        <div className="executive-card p-8 sm:p-12 rounded-3xl shadow-executive-hover border border-canvasBorder">
+          {submitted ? (
+            <div className="text-center py-12 space-y-4">
+              <div className="w-14 h-14 rounded-full bg-aurionTeal-light border border-aurionTeal text-aurionTeal flex items-center justify-center mx-auto">
+                <Check className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif text-ink font-bold">
-                Initiate Strategic Mandate
-              </h3>
-              <p className="text-xs text-inkMuted leading-relaxed">
-                Connect directly with Aurion's Managing Partners regarding sovereign corridors, hospital turnaround, or practice architecture.
+              <h3 className="text-2xl font-serif font-bold text-ink">Inquiry Received</h3>
+              <p className="text-inkMuted text-sm max-w-md mx-auto">
+                Your request has been securely transmitted to managing partners Dr. Asser Medhat and Dr. Asmaa Salman. You will receive an executive response within 24 hours.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                  Full Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  placeholder="Dr. / Mr. / Ms."
-                  value={formData.name}
-                  onChange={e => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-                />
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2">Executive Name & Title</label>
+                  <input type="text" required placeholder="Dr. / Board Member / CEO" className="w-full px-4 py-3 rounded-xl bg-canvas border border-canvasBorder text-ink text-sm focus:border-aurionTeal focus:bg-canvasPure focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2">Corporate Email</label>
+                  <input type="email" required placeholder="executive@institution.com" className="w-full px-4 py-3 rounded-xl bg-canvas border border-canvasBorder text-ink text-sm focus:border-aurionTeal focus:bg-canvasPure focus:outline-none transition-colors" />
+                </div>
               </div>
-              <div>
-                <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                  Institutional Role
-                </label>
-                <input
-                  required
-                  type="text"
-                  placeholder="CEO, Board Member, Minister"
-                  value={formData.title}
-                  onChange={e => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-                />
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2">Institution / Organization</label>
+                  <input type="text" required placeholder="Hospital Network / Authority / PE Fund" className="w-full px-4 py-3 rounded-xl bg-canvas border border-canvasBorder text-ink text-sm focus:border-aurionTeal focus:bg-canvasPure focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2">Advisory Area of Interest</label>
+                  <select className="w-full px-4 py-3 rounded-xl bg-canvas border border-canvasBorder text-ink text-sm focus:border-aurionTeal focus:bg-canvasPure focus:outline-none transition-colors">
+                    <option>International Patient Services, Medical Tourism & Telehealth (Flagship)</option>
+                    <option>Strategy & System Transformation</option>
+                    <option>Operations & Throughput Turnaround</option>
+                    <option>Elite Aesthetics, Wellness & Premium Clinic Design</option>
+                    <option>Mega Events Management</option>
+                    <option>Digital Health & Clinical Informatics</option>
+                    <option>Business Development, Brand & Commercial Advisory</option>
+                    <option>Healthcare Project Management & Corporate Training</option>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                  Organization
-                </label>
-                <input
-                  required
-                  type="text"
-                  placeholder="Health Authority, Hospital, Fund"
-                  value={formData.organization}
-                  onChange={e => setFormData({ ...formData, organization: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-                />
+                <label className="block text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-2">Strategic Context</label>
+                <textarea rows={4} placeholder="Briefly articulate your transformation objectives, cross-border goals, or institutional scope..." className="w-full px-4 py-3 rounded-xl bg-canvas border border-canvasBorder text-ink text-sm focus:border-aurionTeal focus:bg-canvasPure focus:outline-none transition-colors"></textarea>
               </div>
-              <div>
-                <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                  Primary Jurisdiction
-                </label>
-                <select
-                  value={formData.jurisdiction}
-                  onChange={e => setFormData({ ...formData, jurisdiction: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-                >
-                  <option>Egypt</option>
-                  <option>Saudi Arabia (KSA)</option>
-                  <option>United Arab Emirates (UAE)</option>
-                  <option>Kuwait / Qatar / Oman / Bahrain</option>
-                  <option>Regional / International</option>
-                </select>
-              </div>
-            </div>
 
-            <div>
-              <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                Advisory Practice Area
-              </label>
-              <select
-                value={formData.practice}
-                onChange={e => setFormData({ ...formData, practice: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-              >
-                {PRACTICES.map(p => (
-                  <option key={p.id} value={p.title}>
-                    {p.num} - {p.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+              <button type="submit" className="w-full py-4 rounded-full bg-aurionTeal hover:bg-aurionTeal-dark text-white font-mono text-xs font-bold uppercase tracking-wider shadow-executive transition-all flex items-center justify-center space-x-2">
+                <span>Transmit Executive Consultation Request</span>
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
+          )}
+        </div>
 
-            <div>
-              <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                Official Email
-              </label>
-              <input
-                required
-                type="email"
-                placeholder="executive@institution.com"
-                value={formData.email}
-                onChange={e => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors"
-              />
-            </div>
-
-            <div>
-              <label className="block text-[11px] font-mono uppercase text-ink font-medium mb-1">
-                Mandate Scope & Objectives
-              </label>
-              <textarea
-                rows={3}
-                placeholder="Briefly describe the institutional mandate, timeline, or transformation objectives..."
-                value={formData.message}
-                onChange={e => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-canvas border border-canvasBorder text-ink focus:border-aurionTeal focus:bg-canvasPure outline-none transition-colors resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono uppercase tracking-wider text-white bg-aurionTeal hover:bg-aurionTeal-vibrant shadow-sm font-semibold transition-all"
-            >
-              <span>Submit Confidential Mandate</span>
-              <Send className="w-3.5 h-3.5" />
-            </button>
-          </form>
-        )}
       </div>
-    </div>
+    </section>
   );
 };

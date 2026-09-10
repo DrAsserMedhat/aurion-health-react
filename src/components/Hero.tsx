@@ -1,5 +1,4 @@
-import React from 'react';
-import { ArrowRight, ShieldCheck, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -7,69 +6,63 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
-    <section className="relative h-[92vh] md:h-[95vh] flex items-end overflow-hidden bg-black pt-20">
-      {/* Background Video with Fallback */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="https://drassermedhat.github.io/AurionHealth/sector-sovereign-health.jpg"
-        className="absolute inset-0 w-full h-full object-cover opacity-35 filter brightness-90 contrast-110"
-      >
-        <source src="/aurion-hero-video.mp4" type="video/mp4" />
-        <source src="https://drassermedhat.github.io/AurionHealth/aurion-hero-video.mp4" type="video/mp4" />
-      </video>
+    <section className="relative h-[92vh] md:h-[95vh] flex items-end overflow-hidden bg-black">
+      {/* Video Background: Bright & Clear */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          poster="https://drassermedhat.github.io/AurionHealth/capability-strategy-boardroom.webp" 
+          className="w-full h-full object-cover opacity-100 filter brightness-95 contrast-105"
+        >
+          <source src="/aurion-hero-video.mp4" type="video/mp4" />
+          <source src="https://drassermedhat.github.io/AurionHealth/aurion-hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Subtle Gradient that preserves video visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent pointer-events-none"></div>
+      </div>
 
-      {/* Luxury Cinematic Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/70 to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-noir/90 via-noir/40 to-transparent pointer-events-none" />
-
-      {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24 w-full">
-        <div className="max-w-3xl space-y-6">
-          {/* Sovereign Badge */}
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-aurionTeal-subtle border border-aurionTeal/30 backdrop-blur-md">
-            <ShieldCheck className="w-3.5 h-3.5 text-aurionTeal-vibrant" />
-            <span className="text-[11px] font-mono tracking-widest text-aurionTeal-glow uppercase font-semibold">
-              Sovereign & Institutional Healthcare Advisory
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 pb-14 md:pb-20 w-full">
+        <div className="max-w-3xl">
+          
+          <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/65 backdrop-blur-md mb-4 shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-aurionTeal-vibrant animate-pulse"></span>
+            <span className="text-[10px] font-mono tracking-widest-luxury uppercase text-white font-bold">
+              HEALTHCARE ADVISORY · EGYPT & GCC
             </span>
           </div>
 
-          {/* Luxury Executive Title */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif tracking-tight text-white leading-[1.12]">
-            Architecting Healthcare Transformation Across Emerging & Sovereign Markets
+          {/* High-Fashion / Fancy Editorial Typography */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-white tracking-tight leading-[1.12] mb-4 drop-shadow-md">
+            The bridge between <span className="font-fancy-italic text-aurionTeal-glow font-normal">strategy</span> <br className="hidden sm:inline" />
+            <span className="font-sans font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
+              and enduring clinical results.
+            </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 font-sans leading-relaxed max-w-2xl font-light">
-            An elite advisory practice guiding sovereign health authorities, sovereign wealth funds, hospital networks, and medical tourism corridors across Egypt, the GCC, and emerging economies.
+          <p className="text-xs sm:text-sm md:text-base text-slate-200 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow">
+            We help healthcare institutions turn complex strategic priorities into clear operating models, stronger growth, and measurable execution across strategy, transformation, international patient services, and healthcare investment.
           </p>
 
-          {/* Action CTAs */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-            <a
-              href="#capabilities"
-              className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl text-xs font-mono uppercase tracking-wider text-white bg-aurionTeal hover:bg-aurionTeal-vibrant shadow-lg hover:shadow-glow-teal transition-all font-semibold"
+          <div className="flex flex-wrap items-center gap-3">
+            <button 
+              onClick={onOpenContact} 
+              className="px-6 py-3 rounded-full bg-aurionTeal-vibrant hover:bg-aurionTeal-glow text-noir font-mono text-xs font-bold uppercase tracking-wider shadow-glow-teal transition-all flex items-center space-x-2"
             >
-              <span>Explore Advisory Capabilities</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
-            <button
-              onClick={onOpenContact}
-              className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl text-xs font-mono uppercase tracking-wider text-slate-200 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all"
-            >
-              <span>Initiate Strategic Mandate</span>
+              <span>DISCUSS A PROJECT</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
+            <a 
+              href="#capabilities" 
+              className="px-6 py-3 rounded-full border border-white/30 bg-black/40 hover:bg-white/10 text-white font-mono text-xs font-semibold uppercase tracking-wider backdrop-blur-sm transition-all flex items-center space-x-2"
+            >
+              <span>EXPLORE PRACTICE AREAS</span>
+            </a>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 right-8 hidden md:flex items-center space-x-2 text-slate-400 text-xs font-mono tracking-widest uppercase opacity-70">
-        <span>Scroll to Explore</span>
-        <ChevronDown className="w-4 h-4 animate-bounce" />
+        </div>
       </div>
     </section>
   );

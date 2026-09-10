@@ -1,90 +1,82 @@
-import React from 'react';
-import { Search, Compass, Cpu, CheckCircle } from 'lucide-react';
+import { Compass, GitMerge, Zap, Award } from 'lucide-react';
 
 export const Approach: React.FC = () => {
   const phases = [
     {
-      step: "01",
-      icon: Search,
-      title: "Diagnostic & Baseline Audit",
-      timeline: "Weeks 1 to 4",
-      desc: "Deep-dive institutional assessment of clinical governance, operational throughput, financial leakage, and cross-border market demand."
-    },
-    {
-      step: "02",
+      phase: "[ Phase I ]",
       icon: Compass,
-      title: "Strategic Architecture",
-      timeline: "Weeks 5 to 10",
-      desc: "Formulation of target operating models, clinical corridor agreements, technology roadmaps, and board-level executive blueprints."
+      title: "Diagnose & Align",
+      desc: "Rapid, evidence-based diagnostic sprints engaging board chairs, medical directors, and finance leads to isolate systemic bottlenecks and quantify growth opportunities.",
+      deliverable: "Deliverable: Diagnostic Memo & Audit"
     },
     {
-      step: "03",
-      icon: Cpu,
-      title: "Operationalization & PMO",
-      timeline: "Months 3 to 9",
-      desc: "Embedded implementation cadence, clinical protocol rollouts, staff masterclasses, and rigorous milestone tracking."
+      phase: "[ Phase II ]",
+      icon: GitMerge,
+      title: "Architect & Plan",
+      desc: "Formulating board-ready target operating models, cross-border corridor pathways, or spatial designs with phased, actionable 18-24 month execution roadmaps.",
+      deliverable: "Deliverable: Board Strategy Blueprint"
     },
     {
-      step: "04",
-      icon: CheckCircle,
-      title: "Value Realization & Autonomy",
-      timeline: "Months 10 to 12",
-      desc: "Institutionalizing clinical KPIs, auditing margin expansion, validating patient satisfaction, and handing off sustainable leadership cadence."
+      phase: "[ Phase III ]",
+      icon: Zap,
+      title: "Mobilize & Execute",
+      desc: "Direct partner oversight of PMO cadence, clinical SOP adoption, vendor alignment, and bilateral government/payer agreements to drive sustained velocity.",
+      deliverable: "Deliverable: PMO & Governance Cadence"
+    },
+    {
+      phase: "[ Phase IV ]",
+      icon: Award,
+      title: "Realize & Sustain",
+      desc: "Tracking realized clinical throughput, foreign patient revenue, and operational velocity against baseline KPIs, transferring internal capabilities to client leadership.",
+      deliverable: "Deliverable: Benefits Realization & Handover"
     }
   ];
 
   return (
     <section id="approach" className="py-24 bg-canvas border-b border-canvasBorder relative bg-drafting-grid">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        
         <div className="max-w-3xl mb-16 space-y-3">
-          <span className="text-xs font-mono uppercase tracking-widest-luxury text-aurionTeal font-bold block">
-            Advisory Approach
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-serif text-ink tracking-tight">
-            The Aurion Engagement Architecture
+          <div className="inline-flex items-center space-x-2 text-[10px] font-mono uppercase tracking-widest text-aurionTeal font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-aurionTeal"></span>
+            <span>Delivery Framework</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-serif font-bold text-ink tracking-tight">
+            How We Partner
           </h2>
-          <p className="text-sm sm:text-base text-inkMuted leading-relaxed">
-            A disciplined, four-phase delivery methodology designed to mitigate risk and guarantee quantifiable clinical and commercial ROI.
+          <p className="text-inkMuted text-sm sm:text-base leading-relaxed pt-1">
+            A disciplined, four-phase engagement framework designed to translate high-level boardroom vision into measurable clinical and financial reality.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {phases.map((phase, idx) => {
-            const Icon = phase.icon;
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {phases.map((p, idx) => {
+            const Icon = p.icon;
             return (
-              <div
-                key={idx}
-                className="bg-canvasPure rounded-2xl border border-canvasBorder p-6 shadow-executive flex flex-col justify-between space-y-6 relative"
+              <div 
+                key={idx} 
+                className="p-8 rounded-3xl bg-canvasPure border border-canvasBorder shadow-sm flex flex-col justify-between group hover:border-aurionTeal/40 transition-all"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-mono font-bold text-aurionTeal/80">
-                      {phase.step}
-                    </span>
-                    <div className="p-2 rounded-lg bg-canvasSubtle text-aurionTeal border border-canvasBorder">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-9 h-9 rounded-xl bg-aurionTeal-light text-aurionTeal flex items-center justify-center font-bold">
                       <Icon className="w-4 h-4" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-inkDim block">
-                      {phase.timeline}
                     </span>
-                    <h3 className="text-base font-serif font-bold text-ink mt-1">
-                      {phase.title}
-                    </h3>
+                    <span className="font-mono text-xs font-bold text-inkDim uppercase tracking-wider">{p.phase}</span>
                   </div>
+                  <h3 className="text-lg font-bold text-ink mb-2 font-serif">{p.title}</h3>
                   <p className="text-xs text-inkMuted leading-relaxed">
-                    {phase.desc}
+                    {p.desc}
                   </p>
                 </div>
-
-                <div className="pt-4 border-t border-canvasBorder text-[11px] font-mono text-inkDim uppercase">
-                  Institutional Milestone {phase.step}
+                <div className="mt-6 pt-4 border-t border-canvasBorder text-[11px] font-mono text-aurionTeal font-semibold">
+                  {p.deliverable}
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
