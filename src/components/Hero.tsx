@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             The bridge between <br />
             <span className="font-fancy-italic text-aurionTeal-glow font-light">strategy</span> <br />
             <span className="font-serif font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-              and measurable <span className="font-extralight italic text-white/95">impact.</span>
+              and measurable <span className="font-extralight italic text-white/95">impact</span>
             </span>
           </h1>
 
