@@ -6,34 +6,35 @@ interface CapabilitiesProps {
 
 export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenDrawer }) => {
   return (
-    <section id="capabilities" className="py-24 bg-canvasPure border-b border-canvasBorder relative">
+    <section id="capabilities" className="py-24 bg-[#F8F9FB] border-b border-canvasBorder relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center space-x-2 text-[10px] font-mono uppercase tracking-widest text-aurionTeal font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-aurionTeal"></span>
-              <span>Strategic Capabilities</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-ink tracking-tight">
+
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div className="max-w-2xl">
+            <div className="section-label mb-4">Strategic Capabilities</div>
+            <h2 className="font-cormorant text-[34px] sm:text-[50px] font-bold text-ink tracking-tight leading-[1.04]">
               Integrated Practice Areas
             </h2>
-            <p className="text-inkMuted text-sm sm:text-base leading-relaxed pt-1">
+            <div className="teal-rule mt-4 mb-4" />
+            <p className="text-inkMuted text-[13.5px] sm:text-[15px] leading-[1.75] font-sans max-w-xl">
               Structured advisory disciplines designed for health system boards, sovereign reform offices, and capital allocators seeking verified clinical and financial acceleration.
             </p>
           </div>
 
-          <button 
-            onClick={() => onOpenDrawer('all')} 
-            className="inline-flex items-center space-x-2 text-xs font-mono text-aurionTeal font-bold uppercase hover:underline"
-          >
-            <span>Open Full Practice Directory</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="flex items-center space-x-5 shrink-0">
+            <span className="font-cinzel text-[72px] font-light leading-none hidden lg:block" style={{ color: 'rgba(27,138,158,0.12)' }}>08</span>
+            <button
+              onClick={() => onOpenDrawer('all')}
+              className="inline-flex items-center space-x-2 text-[10.5px] font-mono text-aurionTeal font-bold uppercase hover:underline"
+            >
+              <span>Full Practice Directory</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* 8 Curated High-End Visual Cards with Exact Photography */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           
           {/* 1. International Patient Services */}
           <div className="executive-card lg:col-span-2 rounded-3xl overflow-hidden flex flex-col justify-between shadow-executive hover:shadow-executive-hover group border-aurionTeal/40">
