@@ -15,13 +15,13 @@
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #F4F6F8;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1B8A9E44;
+    background: #ADB0B5;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -29,45 +29,28 @@
   }
 }
 
-/* ── Drafting Grid ─────────────────────────────────────── */
 .bg-drafting-grid {
   background-size: 60px 60px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
 }
 
-/* ── Executive Cards ───────────────────────────────────── */
 .executive-card {
   background: #FFFFFF;
   border: 1px solid rgba(42, 46, 51, 0.08);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .executive-card:hover {
-  border-color: rgba(27, 138, 158, 0.32);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px -12px rgba(27, 138, 158, 0.10), 0 4px 16px -2px rgba(42, 46, 51, 0.04);
+  border-color: rgba(27, 138, 158, 0.38);
+  transform: translateY(-4px);
 }
 
-/* ── Dark Executive Cards ──────────────────────────────── */
-.executive-card-dark {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.executive-card-dark:hover {
-  border-color: rgba(79, 178, 196, 0.30);
-  background: rgba(255,255,255,0.05);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px -12px rgba(79, 178, 196, 0.15);
-}
-
-/* ── Dropdown ──────────────────────────────────────────── */
 .dropdown-menu {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .group:hover .dropdown-menu {
   opacity: 1;
@@ -75,7 +58,6 @@
   transform: translateY(0);
 }
 
-/* ── Typography Utilities ──────────────────────────────── */
 .font-fancy-italic {
   font-family: 'Cormorant Garamond', 'Italiana', serif;
   font-style: italic;
@@ -87,258 +69,8 @@
   font-style: italic;
   font-weight: 700 !important;
   color: #4FB2C4 !important;
-  text-shadow: 0 0 32px rgba(79, 178, 196, 0.45), 0 0 64px rgba(79, 178, 196, 0.18);
+  text-shadow: 0 0 25px rgba(79, 178, 196, 0.4);
   display: inline-block;
   letter-spacing: normal;
 }
 
-.font-display-dark {
-  font-family: 'Cormorant Garamond', 'Italiana', serif;
-  font-style: italic;
-  color: #4FB2C4;
-}
-
-/* ── Section Labels ────────────────────────────────────── */
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: #1B8A9E;
-}
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #1B8A9E;
-  flex-shrink: 0;
-}
-
-.section-label-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.20em;
-  text-transform: uppercase;
-  color: #4FB2C4;
-}
-.section-label-dark::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4FB2C4;
-  flex-shrink: 0;
-}
-
-/* ── Teal Glow CTA ─────────────────────────────────────── */
-.btn-primary-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 48px;
-  padding: 0 28px;
-  border-radius: 9999px;
-  background: #ffffff;
-  color: #0C4A54;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-  cursor: pointer;
-}
-.btn-primary-dark:hover {
-  box-shadow: 0 0 28px rgba(79, 178, 196, 0.40), 0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-1.5px);
-}
-
-.btn-secondary-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 24px;
-  border-radius: 9999px;
-  background: rgba(79, 178, 196, 0.05);
-  color: rgba(255,255,255,0.80);
-  font-family: 'Space Grotesk', monospace;
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  border: 1px solid rgba(79, 178, 196, 0.28);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(8px);
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn-secondary-dark:hover {
-  border-color: rgba(79, 178, 196, 0.60);
-  background: rgba(79, 178, 196, 0.12);
-  color: rgba(255,255,255,1);
-}
-
-.btn-primary-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 46px;
-  padding: 0 26px;
-  border-radius: 9999px;
-  background: #1B8A9E;
-  color: #ffffff;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(27, 138, 158, 0);
-}
-.btn-primary-light:hover {
-  background: #126673;
-  box-shadow: 0 0 20px rgba(27, 138, 158, 0.30);
-  transform: translateY(-1px);
-}
-
-/* ── Teal Rule Line ─────────────────────────────────────── */
-.teal-rule {
-  height: 1.5px;
-  width: 48px;
-  background: linear-gradient(to right, #4FB2C4, #1B8A9E44);
-  border-radius: 2px;
-}
-
-/* ── Section Divider ───────────────────────────────────── */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(27, 138, 158, 0.25) 30%, rgba(79, 178, 196, 0.40) 50%, rgba(27, 138, 158, 0.25) 70%, transparent);
-}
-
-/* ── Phase connector line ───────────────────────────────── */
-.phase-connector {
-  position: absolute;
-  top: 20px;
-  left: calc(100% - 1px);
-  width: calc(100% + 24px);
-  height: 1px;
-  background: linear-gradient(to right, rgba(79, 178, 196, 0.35), rgba(79, 178, 196, 0.08));
-  pointer-events: none;
-}
-
-/* ── Sector card hover ──────────────────────────────────── */
-.sector-card {
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(42, 46, 51, 0.08);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  background: #FFFFFF;
-}
-.sector-card:hover {
-  border-color: rgba(27, 138, 158, 0.28);
-  box-shadow: 0 20px 40px -12px rgba(27, 138, 158, 0.10);
-  transform: translateY(-4px);
-}
-
-/* ── Capability card ─────────────────────────────────────── */
-.cap-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(28, 32, 36, 0.97) 0%, rgba(28,32,36,0.70) 40%, rgba(28,32,36,0.10) 100%);
-  transition: opacity 0.4s ease;
-}
-.cap-card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 28px;
-  transform: translateY(0);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.cap-card-hover-body {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  margin-top: 10px;
-}
-.cap-card-wrap:hover .cap-card-content {
-  transform: translateY(-8px);
-}
-.cap-card-wrap:hover .cap-card-hover-body {
-  max-height: 120px;
-  opacity: 1;
-}
-
-/* ── Animate in on load ──────────────────────────────────── */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* ── Mandate dossier card ────────────────────────────────── */
-.mandate-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mandate-card:hover {
-  border-color: rgba(79, 178, 196, 0.28);
-  background: rgba(79, 178, 196, 0.04);
-  transform: translateY(-3px);
-}
-
-/* ── Number display ──────────────────────────────────────── */
-.display-number {
-  font-family: 'Cinzel', 'Cormorant Garamond', serif;
-  font-weight: 400;
-  color: rgba(79, 178, 196, 0.18);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  user-select: none;
-}
-
-/* ── Leadership portrait ─────────────────────────────────── */
-.leader-portrait {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.leader-portrait:hover {
-  transform: scale(1.015);
-}
-.leader-portrait::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(79, 178, 196, 0.20);
-  border-radius: 12px;
-  pointer-events: none;
-}
-
-/* ── Footer rule ─────────────────────────────────────────── */
-.footer-rule {
-  height: 1px;
-  background: linear-gradient(to right, rgba(79,178,196,0.40) 0%, rgba(79,178,196,0.15) 60%, transparent 100%);
-}

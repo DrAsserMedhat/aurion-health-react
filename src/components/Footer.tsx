@@ -4,115 +4,60 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenDrawer }) => {
   return (
-    <footer className="bg-[#050809] relative overflow-hidden">
-
-      {/* Top teal rule */}
-      <div className="footer-rule" />
-
-      {/* Ambient glow */}
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-aurionTeal/4 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* Main content */}
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-14">
-
-          {/* Brand column */}
-          <div className="md:col-span-5 space-y-5">
+    <footer className="bg-black border-t border-white/10 py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+          
+          <div className="md:col-span-5 space-y-4">
             <a href="#" className="inline-block">
-              <img
-                src="/Aurion-Logo.svg"
-                alt="Aurion Health Advisory"
-                className="h-16 md:h-20 w-auto object-contain"
+              <img 
+                src="/Aurion-Logo.png" 
+                alt="Aurion Health Advisory" 
+                className="h-20 md:h-24 w-auto object-contain"
                 onError={(e) => { e.currentTarget.src = 'https://drassermedhat.github.io/AurionHealth/Aurion-Logo.png'; }}
               />
             </a>
-
-            {/* Tagline in Cormorant italic */}
-            <p
-              className="font-cormorant italic leading-[1.55]"
-              style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)' }}
-            >
-              "The bridge between strategy and results."
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed mt-2 font-sans">
+              The bridge between strategy and results. An elite boutique healthcare advisory practice integrating board strategy, cross-border patient corridors, and next-generation clinical ecosystems.
             </p>
-
-            <p className="text-[12px] text-white/28 max-w-sm leading-[1.75] font-sans">
-              An elite boutique healthcare advisory practice integrating board strategy, cross-border patient corridors, and next-generation clinical ecosystems.
-            </p>
-
-            {/* Founding note */}
-            <div className="flex items-center space-x-2 pt-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-aurionTeal/50" />
-              <span className="text-[10px] font-mono text-white/20 uppercase tracking-[0.18em]">Founded · Cairo, Egypt · 2024</span>
-            </div>
           </div>
 
-          {/* Capabilities column */}
-          <div className="md:col-span-4 space-y-4">
-            <div className="text-[9.5px] font-mono uppercase tracking-[0.22em] text-white/40 font-bold mb-4">Capabilities</div>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
-              {[
-                { id: 'ips', label: '★ International Corridors' },
-                { id: 'strategy', label: 'Strategy & Transformation' },
-                { id: 'ops', label: 'Operations & Turnaround' },
-                { id: 'spaces', label: 'Elite Aesthetics & Wellness' },
-                { id: 'events', label: 'Mega Events Management' },
-                { id: 'digital', label: 'Digital Health Informatics' },
-                { id: 'commercial', label: 'Business Development' },
-                { id: 'pmo', label: 'Healthcare Project Mgmt.' },
-              ].map(({ id, label }) => (
-                <li key={id}>
-                  <button
-                    onClick={() => onOpenDrawer(id)}
-                    className="text-[11.5px] font-mono text-white/35 hover:text-aurionTeal-glow transition-colors text-left leading-snug"
-                  >
-                    {label}
-                  </button>
-                </li>
-              ))}
+          <div className="md:col-span-4 space-y-3">
+            <div className="text-xs font-mono uppercase tracking-widest text-white font-bold">Capabilities</div>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-400 font-mono">
+              <li><button onClick={() => onOpenDrawer('ips')} className="hover:text-aurionTeal-vibrant transition-colors text-left">★ International Corridors</button></li>
+              <li><button onClick={() => onOpenDrawer('strategy')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Strategy & Transformation</button></li>
+              <li><button onClick={() => onOpenDrawer('ops')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Operations & Turnaround</button></li>
+              <li><button onClick={() => onOpenDrawer('spaces')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Elite Aesthetics & Wellness</button></li>
+              <li><button onClick={() => onOpenDrawer('events')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Mega Events Management</button></li>
+              <li><button onClick={() => onOpenDrawer('digital')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Digital Health Informatics</button></li>
+              <li><button onClick={() => onOpenDrawer('commercial')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Business Development, Brand</button></li>
+              <li><button onClick={() => onOpenDrawer('pmo')} className="hover:text-aurionTeal-vibrant transition-colors text-left">Healthcare Project Management</button></li>
             </ul>
           </div>
 
-          {/* Presence column */}
-          <div className="md:col-span-3 space-y-4">
-            <div className="text-[9.5px] font-mono uppercase tracking-[0.22em] text-white/40 font-bold mb-4">Regional Presence</div>
-            <div className="space-y-2.5">
-              {[
-                { dot: true, text: 'Operating HQ: Cairo, Egypt' },
-                { dot: false, text: 'Regional Corridors: KSA · UAE · GCC' },
-              ].map(({ dot, text }) => (
-                <div key={text} className="flex items-start space-x-2">
-                  {dot && <span className="w-1.5 h-1.5 rounded-full bg-aurionTeal/50 mt-1.5 shrink-0" />}
-                  <span className="text-[12px] font-mono text-white/35">{text}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-3">
-              <div className="text-[9.5px] font-mono text-white/25 uppercase tracking-widest mb-1.5">Confidential</div>
-              <a
-                href="mailto:executive@aurionadvisory.com"
-                className="text-[12px] font-mono text-aurionTeal-glow hover:underline"
-              >
-                executive@aurionadvisory.com
-              </a>
+          <div className="md:col-span-3 space-y-3">
+            <div className="text-xs font-mono uppercase tracking-widest text-white font-bold">Regional Presence</div>
+            <p className="text-xs text-slate-400 leading-relaxed font-mono">
+              Operating Headquarters: Cairo, Egypt.<br />
+              Regional Corridors: Saudi Arabia, UAE & GCC.
+            </p>
+            <div className="pt-2 text-xs font-mono text-aurionTeal-vibrant font-semibold">
+              Confidential: <span className="text-white">executive@aurionadvisory.com</span>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
-        >
-          <div className="text-[10.5px] font-mono text-white/18">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-slate-400 gap-4">
+          <div>
             © 2026 Aurion Health Advisory. All Rights Reserved.
           </div>
-          <div className="flex items-center space-x-3 text-[9.5px] font-mono font-bold tracking-[0.20em] text-aurionTeal/60 uppercase">
-            <span>Strategy</span>
-            <span className="text-aurionTeal/25">·</span>
-            <span>Transformation</span>
-            <span className="text-aurionTeal/25">·</span>
-            <span>Impact</span>
+          <div className="flex items-center space-x-3 text-aurionTeal-vibrant font-bold tracking-widest">
+            <span>STRATEGY</span>
+            <span>•</span>
+            <span>TRANSFORMATION</span>
+            <span>•</span>
+            <span>IMPACT</span>
           </div>
         </div>
       </div>
